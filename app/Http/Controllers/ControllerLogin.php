@@ -40,11 +40,12 @@ class ControllerLogin extends Controller
         $email = $request->idm;
         $password = $request->password;
 
-        $data = ModelUsers::where('nim',$email)->orWhere('nip',$email)->first();
+        $data = ModelUsers::where('nim',$email)->join('role','role.id_role','=','users.id_role')->orWhere('nip',$email)->first();
         if($data){ //apakah email tersebut ada atau tidak
             if(Hash::check($password, $data->password)) {
                 Session::put('name',$data->name);
                 Session::put('roles',$data->id_role);
+                Session::put('nama_roles',$data->role_name);
                 Session::put('user',$data->id_user);
                 Session::put('email',$data->email);
                 Session::put('login',TRUE);

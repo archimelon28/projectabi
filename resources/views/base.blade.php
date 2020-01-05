@@ -92,9 +92,9 @@
             <div class="nav-link">
               <div class="user-wrapper">
                 <div class="text-wrapper">
-                  <p class="profile-name">Richard V.Welsh</p>
+                  <p class="profile-name">{{Session::get('name')}} </p>
                   <div>
-                    <small class="designation text-muted">Manager</small>
+                    <small class="designation text-muted">{{Session::get('nama_roles')}} </small>
                     <span class="status-indicator online"></span>
                   </div>
                 </div>

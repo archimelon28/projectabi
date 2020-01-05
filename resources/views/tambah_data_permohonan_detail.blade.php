@@ -10,7 +10,7 @@
                   <form method="POST" enctype="multipart/form-data" action="{{ route('permohonandetail.store') }}"  >
                     @csrf
                     @php 
-                    if ($mohon->krs != null and $mohon->transkip_niai != null and $mohon->bukti_tf != null) {
+                    if ($mohon->krs == null and $mohon->transkip_nilai == null and $mohon->bukti_tf == null) {
                     @endphp
                     <p>Tidak ada Prasyarat</p>
                     @php

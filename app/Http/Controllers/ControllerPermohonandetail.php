@@ -27,7 +27,7 @@ class ControllerPermohonandetail extends Controller
             ->where('id_permohonan', Session::get('mohon'))
             // ->where('')
             ->first();
-        // dd($mohon);die();
+        // dd($mohon->bukti_tf);die();
         // dd(Session::get('id_surat'));die();
         Session::put('mohon',$mohon->id_permohonan);
         // dd(Session::get('mohon'));die();
